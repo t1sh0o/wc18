@@ -6,6 +6,7 @@ const matchApiUrl = 'https://worldcup.sfg.io/matches/today';
 const slackUrl = process.env.SLACK_URL;
 const channel = process.env.SLACK_CHANNEL || '#general';
 const refreshTime = (process.env.REFRESH_TIME || 5) * 1000;
+const timezone = parseInt(process.env.TIMEZONE || 0);
 
 let cache = null;
 
@@ -72,7 +73,7 @@ function toHours(dateString, status, venue) {
 	}
 
 	let timeParts = dateString.split('T')[1].split(':');
-	timeParts[0] = Number(timeParts[0]) + 3;
+	timeParts[0] = Number(timeParts[0]) + timezone;
 
 	return timeParts.slice(0, 2).join(':');
 }

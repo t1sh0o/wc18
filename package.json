@@ -1,0 +1,24 @@
+{
+  "name": "wc18",
+  "version": "0.1.0",
+  "description": "World cup 2018 results to slack",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "forever": "^0.15.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "world",
+    "cup",
+    "2018",
+    "results",
+    "slack"
+  ],
+  "author": "tihomir.tonov@donatix.net",
+  "license": "MIT"
+}

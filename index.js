@@ -52,10 +52,13 @@ function extractMatches(info) {
 }
 
 function toPlayer(team, leadingFlag) {
-	let countryCode = countries[team.country].toLowerCase();
-	let flag = `:flag-${countryCode}:`;
+	let flag = `:flag-${getCountryCode(team.country)}:`;
 
 	return leadingFlag ? `${flag} ${team.country}` : `${team.country} ${flag}`;
+}
+
+function getCountryCode(country) {
+	return (countries[country] || country).toLowerCase();
 }
 
 function extractResult(home, away, status) {
